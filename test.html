@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Pinterest Style Grid</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#111;
+  padding:20px;
+  font-family:sans-serif;
+}
+
+.grid{
+  column-width:280px;
+  column-gap:16px;
+}
+
+.item{
+  break-inside:avoid;
+  margin-bottom:16px;
+
+  border-radius:22px;
+  overflow:hidden;
+
+  background:#1e1e1e;
+  color:white;
+
+  transition:.25s transform;
+  cursor:pointer;
+}
+
+.item:hover{
+  transform:translateY(-5px);
+}
+
+.item img{
+  width:100%;
+  display:block;
+}
+
+.content{
+  padding:14px;
+}
+
+.content h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.content p{
+  opacity:.7;
+  line-height:1.5;
+}
+
+</style>
+</head>
+<body>
+
+<div class="grid">
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/mobile-t-163-1-59502_thumb_h_325.webp">
+    <div class="content">
+      <h3>Mountains</h3>
+      <p>Cold air and silence.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Azadi-khoramshahr-500-300-68-1-80096_thumb_h_325.webp">
+    <div class="content">
+      <h3>Forest</h3>
+      <p>Trees doing tree things.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Emam-javad-300-400-137-1-59329_thumb_h_325.webp">
+    <div class="content">
+      <h3>Ocean</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/shekar-b-12-1-90443_thumb_h_325.webp">
+    <div class="content">
+      <h3>City</h3>
+      <p>Humans stacking concrete creatively.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-ravabet-omoomi-300-400-55-1-96268_thumb_h_325.webp">
+    <div class="content">
+      <h3>Night</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Ghorban-700-300-02-1-38493_thumb_h_325.webp">
+    <div class="content">
+      <h3>Coffee</h3>
+      <p>The fuel of modern suffering.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Azadi-khoramshahr-150-30-23-1-70216_thumb_h_325.webp">
+    <div class="content">
+      <h3>Bridge</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/roghangiri-t-13-1-18541_thumb_h_325.webp">
+    <div class="content">
+      <h3>Street</h3>
+      <p>Rainy neon aesthetic because internet.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Tajhizat-ashpazkhane-kv-24-73190_thumb_h_325.webp">
+    <div class="content">
+      <h3>Sky</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Amoozeshgah-zaban-t-98-1-76196_thumb_h_325.webp">
+    <div class="content">
+      <h3>Flowers</h3>
+      <p>Nature carrying the design industry.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-miras-farhangi-90-200-10-1-18781_thumb_h_325.webp">
+    <div class="content">
+      <h3>Architecture</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Emam-Bagher-300-400-86-1-52826_thumb_h_325.webp">
+    <div class="content">
+      <h3>Desert</h3>
+      <p>Big sand. Humanity impressed.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/ayatollah-mojtaba-khamenei-90-200-05-1-66835_thumb_h_325.webp">
+    <div class="content">
+      <h3>Lake</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-miras-farhangi-300-100-17-1-10727_thumb_h_325.webp">
+    <div class="content">
+      <h3>Books</h3>
+      <p>Ancient PDFs made from trees.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/doaye-arafe-300-400-117-1-67312_thumb_h_325.webp">
+    <div class="content">
+      <h3>Snow</h3>
+    </div>
+  </div>
+
+    <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/mobile-t-163-1-59502_thumb_h_325.webp">
+    <div class="content">
+      <h3>Mountains</h3>
+      <p>Cold air and silence.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Azadi-khoramshahr-500-300-68-1-80096_thumb_h_325.webp">
+    <div class="content">
+      <h3>Forest</h3>
+      <p>Trees doing tree things.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Emam-javad-300-400-137-1-59329_thumb_h_325.webp">
+    <div class="content">
+      <h3>Ocean</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/shekar-b-12-1-90443_thumb_h_325.webp">
+    <div class="content">
+      <h3>City</h3>
+      <p>Humans stacking concrete creatively.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-ravabet-omoomi-300-400-55-1-96268_thumb_h_325.webp">
+    <div class="content">
+      <h3>Night</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Ghorban-700-300-02-1-38493_thumb_h_325.webp">
+    <div class="content">
+      <h3>Coffee</h3>
+      <p>The fuel of modern suffering.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Azadi-khoramshahr-150-30-23-1-70216_thumb_h_325.webp">
+    <div class="content">
+      <h3>Bridge</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/roghangiri-t-13-1-18541_thumb_h_325.webp">
+    <div class="content">
+      <h3>Street</h3>
+      <p>Rainy neon aesthetic because internet.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Tajhizat-ashpazkhane-kv-24-73190_thumb_h_325.webp">
+    <div class="content">
+      <h3>Sky</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Amoozeshgah-zaban-t-98-1-76196_thumb_h_325.webp">
+    <div class="content">
+      <h3>Flowers</h3>
+      <p>Nature carrying the design industry.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-miras-farhangi-90-200-10-1-18781_thumb_h_325.webp">
+    <div class="content">
+      <h3>Architecture</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/Emam-Bagher-300-400-86-1-52826_thumb_h_325.webp">
+    <div class="content">
+      <h3>Desert</h3>
+      <p>Big sand. Humanity impressed.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/ayatollah-mojtaba-khamenei-90-200-05-1-66835_thumb_h_325.webp">
+    <div class="content">
+      <h3>Lake</h3>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/rooze-miras-farhangi-300-100-17-1-10727_thumb_h_325.webp">
+    <div class="content">
+      <h3>Books</h3>
+      <p>Ancient PDFs made from trees.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://tarh.ir/storage/products_webp_thumb/doaye-arafe-300-400-117-1-67312_thumb_h_325.webp">
+    <div class="content">
+      <h3>Snow</h3>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
