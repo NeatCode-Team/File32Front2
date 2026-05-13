@@ -11,9 +11,9 @@
 </head>
 
 <body class="ff-Vazirmatn-Medium" dir="rtl">
-    <header class="d-flex py-2 pe-3 py-md-3 px-md-5 ff-Vazirmatn-Bold align-items-center">
+    <header class="d-flex py-2 py-md-3 px-md-3 pe-2 ff-Vazirmatn-Bold align-items-center">
         <div class="header-right">
-            <button class="sidebarBtn d-flex justify-content-center align-items-center">
+            <button class="sidebarBtn d-md-none d-flex justify-content-center align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -23,14 +23,32 @@
             <a href="#" class="text-decoration-none text-dark">
                 <img src="./Assests/images/andishkadeLogo.png" class="square" alt="لوگو">
             </a>
+
+            <div class="d-flex align-items-center">
+                <ul class="list-unstyled d-none d-md-flex column-gap-md-3 mb-0 align-items-center">
+                    <li>صفحه اصلی</li>
+                    <li>قوانین و مقررات</li>
+                    <li>نیما چاقالیان</li>
+                    <li>درباره ما</li>
+                    <li>تماس با ما</li>
+                </ul>
+            </div>
         </div>
 
         <div class="header-left">
-            <a href="#" class="text-decoration-none">
-                <img class="user-img" src="./Assests/images/user.png" alt="کاربر">
+            <a href="#" class="text-decoration-none d-block d-md-none">
+                <img class="user-img" src="./Assests/images/user-01.svg" alt="کاربر">
             </a>
-            <a href="#" class="loginBtn f-13 f-md-16">
-                ثبت نام
+
+            <div class="user-box d-none d-md-flex">
+                <a href="#" class="text-decoration-none user-link">
+                    <img class="user-img" src="./Assests/images/user-01.svg" alt="کاربر">
+                    <span class="user-text">ورود/ثبت نام</span>
+                </a>
+            </div>
+
+            <a href="#" class="loginBtn f-13 f-lg-15">
+                خرید اشتراک
             </a>
         </div>
     </header>
@@ -102,6 +120,49 @@
         </nav>
     </aside>
     <div class="antiAside"></div>
+
+    <section>
+        <div class="overflow-hidden d-flex justify-content-center">
+            <div class="imgSection">
+                <div class="d-flex flex-column justify-content-center mt-5">
+                    <div class="d-flex justify-content-center">
+                        <h1 class="text-white col-8 col-md-6 col-lg-3 title text-center f-22 ">فایل 32 مرجع مادرجندگی
+                        </h1>
+                    </div>
+                    <div class="d-md-flex justify-content-md-center">
+                        <p class="title text-white mt-2 col-md-6 col-lg-5 f-14">ایل 32 مرجع مادرجندگیایل 32 مرجع
+                            مادرجندگیایل
+                            32
+                            مرجع مادرجندگیایل
+                            32
+                            مرجع مادرجندگی</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-3 mt-md-4">
+                        <div>
+                            <select name="" class="border-0 outline ps-2" id="">
+                                <option value="">تست 1</option>
+                                <option value="">تست 2 تست تست تست تست تست</option>
+                                <option value="">تست 3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" class="border-0 outline" placeholder="جستجو">
+                        </div>
+                        <div>
+                            <button type="submit" class="border-0">
+                                <img src="./Assests/images/search.svg" class="img-fluid imgSearch" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 
     <script>
         const sidebarBtn = document.querySelector('.sidebarBtn');
