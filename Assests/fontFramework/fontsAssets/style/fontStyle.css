@@ -1,0 +1,1021 @@
+/* adding font files */
+@font-face {
+    font-family: IRANYekanWeb-medium;
+    src: url(../fonts/IRAN-YekanWeb/IRANYekanWeb\ Medium-normal-500-100.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: IRANYekanWeb-normal;
+    src: url(../fonts/IRAN-YekanWeb/IRANYekanWeb-normal-700-100.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: IRANYekanWeb-ExtraBold;
+    src: url(../fonts/IRAN-YekanWeb/IRANYekanWeb\ ExtraBold-normal-800-100.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: IRANSansWeb-UltraLight;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-UltraLight.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb-Light;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-Light.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb-Regular;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb-Medium;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-Medium.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb-Bold;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb-Black;
+    src: url(../fonts/IRANSANS/woff2/IRANSansWeb-Black.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(../fonts/Vazir/Vazir.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Thin;
+    src: url(../fonts/Vazir/Vazir-Thin.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Thin-FD-WOL;
+    src: url(../fonts/Vazir/Vazir-Thin-FD-WOL.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Medium;
+    src: url(../fonts/Vazir/Vazir-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Medium-FD-WOL;
+    src: url(../fonts/Vazir/Vazir-Medium-FD-WOL.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Light;
+    src: url(../fonts/Vazir/Vazir-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Light-FD-WOL;
+    src: url(../fonts/Vazir/Vazir-Light-FD-WOL.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-FD-WOL;
+    src: url(../fonts/Vazir/Vazir-FD-WOL.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Bold;
+    src: url(../fonts/Vazir/Vazir-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Bold-FD-WOL;
+    src: url(../fonts/Vazir/Vazir-Bold-FD-WOL.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazir-Bold-FD-WOL;
+    src: url(../fonts/Lalezar/Lalezar-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: B-Farnaz;
+    src: url(../fonts/B-Farnaz/BFarnaz.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Black;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Black.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Bold;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Bold.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-ExtraBold;
+    src: url(../fonts/Vazirmatn/Vazirmatn-ExtraBold.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-ExtraLight;
+    src: url(../fonts/Vazirmatn/Vazirmatn-ExtraLight.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Light;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Light.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Medium;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Medium.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Regular;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Regular.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-SemiBold;
+    src: url(../fonts/Vazirmatn/Vazirmatn-SemiBold.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Vazirmatn-Thin;
+    src: url(../fonts/Vazirmatn/Vazirmatn-Thin.woff2) format('truetype');
+}
+
+@font-face {
+    font-family: Hamrah;
+    src: url(../fonts/Hamrah/Hamrah.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Samim;
+    src: url(../fonts/Samim/Samim.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Samim-Medium;
+    src: url(../fonts/Samim/Samim-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Samim-Bold;
+    src: url(../fonts/Samim/Samim-Bold.ttf) format('truetype');
+}
+
+/* font families */
+.ff-yekanMedium {
+    font-family: IRANYekanWeb-medium !important;
+    font-weight: 100;
+}
+
+.ff-yekanNoraml {
+    font-family: IRANYekanWeb-normal !important;
+    font-weight: 700;
+}
+
+.ff-yekanXbold {
+    font-family: IRANYekanWeb-ExtraBold !important;
+}
+
+.ff-IRANSansWeb-UltraLight {
+    font-family: IRANSansWeb-UltraLight !important;
+}
+
+.ff-IRANSansWeb-Light {
+    font-family: IRANSansWeb-Light !important;
+}
+
+.ff-IRANSansWeb-Regular {
+    font-family: IRANSansWeb-Regular !important;
+}
+
+.ff-IRANSansWeb-Medium {
+    font-family: IRANSansWeb-Medium !important;
+}
+
+.ff-IRANSansWeb-Bold {
+    font-family: IRANSansWeb-Bold !important;
+}
+
+.ff-IRANSansWeb-Black {
+    font-family: IRANSansWeb-Black !important;
+}
+
+.ff-Vazir {
+    font-family: Vazir !important;
+}
+
+.ff-Vazir-Thin {
+    font-family: Vazir-Thin !important;
+}
+
+.ff-Vazir-Thin-FD-WOL {
+    font-family: Vazir-Thin-FD-WOL !important;
+}
+
+.ff-Vazir-Medium {
+    font-family: Vazir-Medium !important;
+}
+
+.ff-Vazir-Medium-FD-WOL {
+    font-family: Vazir-Medium-FD-WOL !important;
+}
+
+.ff-Vazir-Light {
+    font-family: Vazir-Light !important;
+}
+
+.ff-Vazir-Light-FD-WOL {
+    font-family: Vazir-Light-FD-WOL !important;
+}
+
+.ff-Vazir-FD-WOL {
+    font-family: Vazir-FD-WOL !important;
+}
+
+.ff-Vazir-Bold {
+    font-family: Vazir-Bold !important;
+}
+
+.ff-Vazir-Bold-FD-WOL {
+    font-family: Vazir-Bold-FD-WOL !important;
+}
+
+.ff-Lalezar {
+    font-family: Lalezar !important;
+}
+
+.ff-B-Farnaz {
+    font-family: B-Farnaz !important;
+}
+
+.ff-Vazirmatn-Black{
+    font-family:Vazirmatn-Black  !important;
+}
+
+.ff-Vazirmatn-Bold{
+    font-family: Vazirmatn-Bold  !important;
+}
+
+.ff-Vazirmatn-ExtraBold{
+    font-family: Vazirmatn-ExtraBold  !important;
+}
+
+.ff-Vazirmatn-ExtraLight{
+    font-family: Vazirmatn-ExtraLight  !important;
+}
+
+.ff-Vazirmatn-Light{
+    font-family: Vazirmatn-Light  !important;
+}
+
+.ff-Vazirmatn-Medium{
+    font-family:Vazirmatn-Medium  !important;
+}
+
+.ff-Vazirmatn-Regular{
+    font-family:Vazirmatn-Regular  !important;
+}
+
+.ff-Vazirmatn-Thin{
+    font-family:Vazirmatn-Thin  !important;
+}
+
+.ff-Vazirmatn-SemiBold{
+    font-family:Vazirmatn-SemiBold  !important;
+}
+
+.ff-Hamrah{
+    font-family: Hamrah !important;
+}
+
+.ff-Samim{
+    font-family: Samim !important;
+}
+
+.ff-Samim-Medium{
+    font-family: Samim-Medium !important;
+}
+
+.ff-Samim-Bold{
+    font-family: Samim-Bold !important;
+}
+
+/* .ff-{
+    font-family:  !important;
+} */
+
+
+/* font sizes */
+.f-5 {
+    font-size: 5px !important;
+}
+
+.f-6 {
+    font-size: 6px !important;
+}
+
+.f-7 {
+    font-size: 7px !important;
+}
+
+.f-8 {
+    font-size: 8px !important;
+}
+
+.f-9 {
+    font-size: 9px !important;
+}
+
+.f-10 {
+    font-size: 10px !important;
+}
+
+.f-11 {
+    font-size: 11px !important;
+}
+
+.f-12 {
+    font-size: 12px !important;
+}
+
+.f-13 {
+    font-size: 13px !important;
+}
+
+.f-14 {
+    font-size: 14px !important;
+}
+
+.f-15 {
+    font-size: 15px !important;
+}
+
+.f-16 {
+    font-size: 16px !important;
+}
+
+.f-17 {
+    font-size: 17px !important;
+}
+
+.f-18 {
+    font-size: 18px !important;
+}
+
+.f-19 {
+    font-size: 19px !important;
+}
+
+.f-20 {
+    font-size: 20px !important;
+}
+
+.f-21 {
+    font-size: 21px !important;
+}
+
+.f-22 {
+    font-size: 22px !important;
+}
+
+.f-23 {
+    font-size: 23px !important;
+}
+
+.f-24 {
+    font-size: 24px !important;
+}
+
+.f-25 {
+    font-size: 25px !important;
+}
+
+.f-30 {
+    font-size: 30px !important;
+}
+
+.f-35 {
+    font-size: 35px !important;
+}
+
+.f-40 {
+    font-size: 40px !important;
+}
+
+.f-45 {
+    font-size: 45px !important;
+}
+
+.f-50 {
+    font-size: 50px !important;
+}
+
+.f-60 {
+    font-size: 60px !important;
+}
+
+.f-70 {
+    font-size: 70px !important;
+}
+
+.f-80 {
+    font-size: 80px !important;
+}
+
+@media only screen and (min-width: 576px) {
+    .f-sm-5 {
+        font-size: 5px !important;
+    }
+
+    .f-sm-6 {
+        font-size: 6px !important;
+    }
+
+    .f-sm-7 {
+        font-size: 7px !important;
+    }
+
+    .f-sm-8 {
+        font-size: 8px !important;
+    }
+
+    .f-sm-9 {
+        font-size: 9px !important;
+    }
+
+    .f-sm-10 {
+        font-size: 10px !important;
+    }
+
+    .f-sm-11 {
+        font-size: 11px !important;
+    }
+
+    .f-sm-12 {
+        font-size: 12px !important;
+    }
+
+    .f-sm-13 {
+        font-size: 13px !important;
+    }
+
+    .f-sm-14 {
+        font-size: 14px !important;
+    }
+
+    .f-sm-15 {
+        font-size: 15px !important;
+    }
+
+    .f-sm-16 {
+        font-size: 16px !important;
+    }
+
+    .f-sm-17 {
+        font-size: 17px !important;
+    }
+
+    .f-sm-18 {
+        font-size: 18px !important;
+    }
+
+    .f-sm-19 {
+        font-size: 19px !important;
+    }
+
+    .f-sm-20 {
+        font-size: 20px !important;
+    }
+
+    .f-sm-21 {
+        font-size: 21px !important;
+    }
+
+    .f-sm-22 {
+        font-size: 22px !important;
+    }
+
+    .f-sm-23 {
+        font-size: 23px !important;
+    }
+
+    .f-sm-24 {
+        font-size: 24px !important;
+    }
+
+    .f-sm-25 {
+        font-size: 25px !important;
+    }
+
+    .f-sm-30 {
+        font-size: 30px !important;
+    }
+
+    .f-sm-35 {
+        font-size: 35px !important;
+    }
+
+    .f-sm-40 {
+        font-size: 40px !important;
+    }
+
+    .f-sm-45 {
+        font-size: 45px !important;
+    }
+
+    .f-sm-50 {
+        font-size: 50px !important;
+    }
+
+    .f-sm-60 {
+        font-size: 60px !important;
+    }
+
+    .f-sm-70 {
+        font-size: 70px !important;
+    }
+
+    .f-sm-80 {
+        font-size: 80px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .f-md-5 {
+        font-size: 5px !important;
+    }
+
+    .f-md-6 {
+        font-size: 6px !important;
+    }
+
+    .f-md-7 {
+        font-size: 7px !important;
+    }
+
+    .f-md-8 {
+        font-size: 8px !important;
+    }
+
+    .f-md-9 {
+        font-size: 9px !important;
+    }
+
+    .f-md-10 {
+        font-size: 10px !important;
+    }
+
+    .f-md-11 {
+        font-size: 11px !important;
+    }
+
+    .f-md-12 {
+        font-size: 12px !important;
+    }
+
+    .f-md-13 {
+        font-size: 13px !important;
+    }
+
+    .f-md-14 {
+        font-size: 14px !important;
+    }
+
+    .f-md-15 {
+        font-size: 15px !important;
+    }
+
+    .f-md-16 {
+        font-size: 16px !important;
+    }
+
+    .f-md-17 {
+        font-size: 17px !important;
+    }
+
+    .f-md-18 {
+        font-size: 18px !important;
+    }
+
+    .f-md-19 {
+        font-size: 19px !important;
+    }
+
+    .f-md-20 {
+        font-size: 20px !important;
+    }
+
+    .f-md-21 {
+        font-size: 21px !important;
+    }
+
+    .f-md-22 {
+        font-size: 22px !important;
+    }
+
+    .f-md-23 {
+        font-size: 23px !important;
+    }
+
+    .f-md-24 {
+        font-size: 24px !important;
+    }
+
+    .f-md-25 {
+        font-size: 25px !important;
+    }
+
+    .f-md-30 {
+        font-size: 30px !important;
+    }
+
+    .f-md-35 {
+        font-size: 35px !important;
+    }
+
+    .f-md-40 {
+        font-size: 40px !important;
+    }
+
+    .f-md-45 {
+        font-size: 45px !important;
+    }
+
+    .f-md-50 {
+        font-size: 50px !important;
+    }
+
+    .f-md-60 {
+        font-size: 60px !important;
+    }
+
+    .f-md-70 {
+        font-size: 70px !important;
+    }
+
+    .f-md-80 {
+        font-size: 80px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .f-lg-5 {
+        font-size: 5px !important;
+    }
+
+    .f-lg-6 {
+        font-size: 6px !important;
+    }
+
+    .f-lg-7 {
+        font-size: 7px !important;
+    }
+
+    .f-lg-8 {
+        font-size: 8px !important;
+    }
+
+    .f-lg-9 {
+        font-size: 9px !important;
+    }
+
+    .f-lg-10 {
+        font-size: 10px !important;
+    }
+
+    .f-lg-11 {
+        font-size: 11px !important;
+    }
+
+    .f-lg-12 {
+        font-size: 12px !important;
+    }
+
+    .f-lg-13 {
+        font-size: 13px !important;
+    }
+
+    .f-lg-14 {
+        font-size: 14px !important;
+    }
+
+    .f-lg-15 {
+        font-size: 15px !important;
+    }
+
+    .f-lg-16 {
+        font-size: 16px !important;
+    }
+
+    .f-lg-17 {
+        font-size: 17px !important;
+    }
+
+    .f-lg-18 {
+        font-size: 18px !important;
+    }
+
+    .f-lg-19 {
+        font-size: 19px !important;
+    }
+
+    .f-lg-20 {
+        font-size: 20px !important;
+    }
+
+    .f-lg-21 {
+        font-size: 21px !important;
+    }
+
+    .f-lg-22 {
+        font-size: 22px !important;
+    }
+
+    .f-lg-23 {
+        font-size: 23px !important;
+    }
+
+    .f-lg-24 {
+        font-size: 24px !important;
+    }
+
+    .f-lg-25 {
+        font-size: 25px !important;
+    }
+
+    .f-lg-30 {
+        font-size: 30px !important;
+    }
+
+    .f-lg-35 {
+        font-size: 35px !important;
+    }
+
+    .f-lg-40 {
+        font-size: 40px !important;
+    }
+
+    .f-lg-45 {
+        font-size: 45px !important;
+    }
+
+    .f-lg-50 {
+        font-size: 50px !important;
+    }
+
+    .f-lg-60 {
+        font-size: 60px !important;
+    }
+
+    .f-lg-70 {
+        font-size: 70px !important;
+    }
+
+    .f-lg-80 {
+        font-size: 80px !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .f-xl-5 {
+        font-size: 5px !important;
+    }
+
+    .f-xl-6 {
+        font-size: 6px !important;
+    }
+
+    .f-xl-7 {
+        font-size: 7px !important;
+    }
+
+    .f-xl-8 {
+        font-size: 8px !important;
+    }
+
+    .f-xl-9 {
+        font-size: 9px !important;
+    }
+
+    .f-xl-10 {
+        font-size: 10px !important;
+    }
+
+    .f-xl-11 {
+        font-size: 11px !important;
+    }
+
+    .f-xl-12 {
+        font-size: 12px !important;
+    }
+
+    .f-xl-13 {
+        font-size: 13px !important;
+    }
+
+    .f-xl-14 {
+        font-size: 14px !important;
+    }
+
+    .f-xl-15 {
+        font-size: 15px !important;
+    }
+
+    .f-xl-16 {
+        font-size: 16px !important;
+    }
+
+    .f-xl-17 {
+        font-size: 17px !important;
+    }
+
+    .f-xl-18 {
+        font-size: 18px !important;
+    }
+
+    .f-xl-19 {
+        font-size: 19px !important;
+    }
+
+    .f-xl-20 {
+        font-size: 20px !important;
+    }
+
+    .f-xl-21 {
+        font-size: 21px !important;
+    }
+
+    .f-xl-22 {
+        font-size: 22px !important;
+    }
+
+    .f-xl-23 {
+        font-size: 23px !important;
+    }
+
+    .f-xl-24 {
+        font-size: 24px !important;
+    }
+
+    .f-xl-25 {
+        font-size: 25px !important;
+    }
+
+    .f-xl-30 {
+        font-size: 30px !important;
+    }
+
+    .f-xl-35 {
+        font-size: 35px !important;
+    }
+
+    .f-xl-40 {
+        font-size: 40px !important;
+    }
+
+    .f-xl-45 {
+        font-size: 45px !important;
+    }
+
+    .f-xl-50 {
+        font-size: 50px !important;
+    }
+
+    .f-xl-60 {
+        font-size: 60px !important;
+    }
+
+    .f-xl-70 {
+        font-size: 70px !important;
+    }
+
+    .f-xl-80 {
+        font-size: 80px !important;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .f-xxl-5 {
+        font-size: 5px !important;
+    }
+
+    .f-xxl-6 {
+        font-size: 6px !important;
+    }
+
+    .f-xxl-7 {
+        font-size: 7px !important;
+    }
+
+    .f-xxl-8 {
+        font-size: 8px !important;
+    }
+
+    .f-xxl-9 {
+        font-size: 9px !important;
+    }
+
+    .f-xxl-10 {
+        font-size: 10px !important;
+    }
+
+    .f-xxl-11 {
+        font-size: 11px !important;
+    }
+
+    .f-xxl-12 {
+        font-size: 12px !important;
+    }
+
+    .f-xxl-13 {
+        font-size: 13px !important;
+    }
+
+    .f-xxl-14 {
+        font-size: 14px !important;
+    }
+
+    .f-xxl-15 {
+        font-size: 15px !important;
+    }
+
+    .f-xxl-16 {
+        font-size: 16px !important;
+    }
+
+    .f-xxl-17 {
+        font-size: 17px !important;
+    }
+
+    .f-xxl-18 {
+        font-size: 18px !important;
+    }
+
+    .f-xxl-19 {
+        font-size: 19px !important;
+    }
+
+    .f-xxl-20 {
+        font-size: 20px !important;
+    }
+    
+    .f-xxl-21 {
+        font-size: 21px !important;
+    }
+
+    .f-xxl-22 {
+        font-size: 22px !important;
+    }
+    
+    .f-xxl-23{
+        font-size: 23px !important;
+    }
+
+    .f-xxl-24{
+        font-size: 24px !important;
+    }
+
+    .f-xxl-25 {
+        font-size: 25px !important;
+    }
+
+    .f-xxl-30 {
+        font-size: 30px !important;
+    }
+
+    .f-xxl-35 {
+        font-size: 35px !important;
+    }
+
+    .f-xxl-40 {
+        font-size: 40px !important;
+    }
+
+    .f-xxl-45 {
+        font-size: 45px !important;
+    }
+
+    .f-xxl-50 {
+        font-size: 50px !important;
+    }
+
+    .f-xxl-60 {
+        font-size: 60px !important;
+    }
+
+    .f-xxl-70 {
+        font-size: 70px !important;
+    }
+
+    .f-xxl-80 {
+        font-size: 80px !important;
+    }
+}
