@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assests/fontFramework/fontsAssets/style/fontStyle.css">
+    <link rel="stylesheet" href="../Assests/bootstrap-5.3.3-dist/css/bootstrap.rtl.min.css">
+    <title>لاگین ادمین</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Vazirmatn, sans-serif;
+            background: url(/Assets/images/background.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .logo-box {
+            width: 105px;
+            height: 105px;
+            background: #EEF2FF;
+            border-radius: 14px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        @media (min-width: 480px) {
+            .logo-box {
+                width: 80px;
+                height: 80px;
+                border-radius: 15px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo-box {
+                width: 96px;
+                height: 96px;
+                border-radius: 18px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .logo-box {
+                width: 112px;
+                height: 112px;
+                border-radius: 20px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .logo-box {
+                width: 125px;
+                height: 125px;
+                border-radius: 22px;
+            }
+        }
+
+
+
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1E293B;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            background: #F8FAFC;
+            font-size: 14px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #6366F1;
+            background: #ffffff;
+        }
+
+        .code-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .code-row input {
+            flex: 1;
+        }
+
+        .send-code {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: #6366F1;
+            color: white;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px 0 25px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .remember input {
+            width: auto;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background-color: #fdc13c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+
+        .error-text {
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body class="ff-Vazirmatn-Medium">
+
+    <div class="login-card col-11 col-md-9 col-lg-5">
+        <div class="logo">
+            <div class="logo-box">
+                <img class="rounded-1" src="/Assets/images/vecteezy_black-car-racing_8687649-1 1.png" alt="">
+            </div>
+        </div>
+
+        <h2>ورود به حساب کاربری</h2>
+
+        <form id="loginForm" action="/login" method="POST">
+
+            <div class="form-group">
+                <label class="mb-2">نام کاربری</label>
+                <input id="username" name="username" type="text">
+                <span class="error-text"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="mb-2">رمز عبور</label>
+                <input id="password" name="password" type="password">
+                <span class="error-text"></span>
+            </div>
+
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">مرا به خاطر بسپار</label>
+            </div>
+
+            <button type="submit" class="login-btn">ورود</button>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+<script>
+    const form = document.querySelector("#loginForm");
+    const usernameInput = document.querySelector("#username");
+    const passwordInput = document.querySelector("#password");
+
+    const usernameError = usernameInput.nextElementSibling;
+    const passwordError = passwordInput.nextElementSibling;
+
+    form.addEventListener("submit", (e) => {
+        clearErrors();
+
+        let hasError = false;
+
+        if (usernameInput.value.trim() === "") {
+            usernameError.textContent = "نام کاربری را وارد کنید";
+            hasError = true;
+        }
+
+        if (passwordInput.value.trim() === "") {
+            passwordError.textContent = "رمز عبور را وارد کنید";
+            hasError = true;
+        }
+
+        if (hasError) {
+            e.preventDefault();
+        }
+    });
+
+    function clearErrors() {
+        usernameError.textContent = "";
+        passwordError.textContent = "";
+    }
+</script>
+
+</html>

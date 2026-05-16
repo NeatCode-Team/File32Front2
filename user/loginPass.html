@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../Assests/fontFramework/fontsAssets/style/fontStyle.css">
+    <link rel="stylesheet" href="../Assests/bootstrap-5.3.3-dist/css/bootstrap.rtl.min.css">
+
+    <title>لاگین کاربر</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Vazirmatn, sans-serif;
+            background: url(/Assets/images/background.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .logo-box {
+            width: 105px;
+            height: 105px;
+            background: #EEF2FF;
+            border-radius: 14px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1E293B;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            background: #F8FAFC;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .code-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .send-code {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: #6366F1;
+            color: white;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .send-code:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background-color: #fdc13c;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error-text {
+            color: gray;
+        }
+
+        #phoneNumber:placeholder-shown {
+            direction: rtl;
+            text-align: right;
+        }
+
+        #phoneNumber:focus,
+        #phoneNumber:not(:placeholder-shown) {
+            direction: ltr;
+            text-align: left;
+        }
+
+        #phoneNumber::placeholder {
+            text-align: right;
+            direction: rtl;
+        }
+    </style>
+</head>
+
+<body class="ff-Vazirmatn-Medium">
+    <div class="login-card col-11 col-md-9 col-lg-5">
+
+        <div class="logo">
+            <div class="logo-box">
+                <img src="/Assets/images/vecteezy_black-car-racing_8687649-1 1.png" alt="">
+            </div>
+        </div>
+
+        <h2>ورود به حساب کاربری</h2>
+
+        <form id="loginForm" method="post" action="/Account/Login">
+
+            <input type="hidden" name="__RequestVerificationToken" value="TOKEN_FROM_BACKEND">
+
+            <div class="form-group">
+                <label class="mb-2">رمز عبور</label>
+                <input id="phoneNumber" maxlength="11" name="phoneNumber" type="password">
+                <span class="error-text"></span>
+            </div>
+
+            <button type="submit" class="login-btn">تایید و ورود</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
