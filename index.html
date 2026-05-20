@@ -163,33 +163,8 @@
 
 
 
-
-    <script>
-        const sidebarBtn = document.querySelector('.sidebarBtn');
-        const aside = document.querySelector('aside');
-        const antiAside = document.querySelector('.antiAside');
-
-        function openSidebar() {
-            aside.classList.add('active');
-            antiAside.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSidebar() {
-            aside.classList.remove('active');
-            antiAside.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        sidebarBtn.addEventListener('click', openSidebar);
-        antiAside.addEventListener('click', closeSidebar);
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && aside.classList.contains('active')) {
-                closeSidebar();
-            }
-        });
-    </script>
+<script src="Assests/js/swiper.js"></script>
+<script src="Assests/js/script.js"></script>
 </body>
 
 </html>
