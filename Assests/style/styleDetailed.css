@@ -107,20 +107,18 @@ header .header-left {
   }
 
   .user-link:hover {
-    border-color: #fdc13c;
+    border-color: #dd2a1b;
     transform: translateY(-1px);
   }
 
   .loginBtn {
     color: black;
-    background-color: #fdc13c;
-    border: 1px solid #fdc13c;
+    background-color: #dd2a1b;
+    border: 1px solid #dd2a1b;
     flex-direction: row-reverse;
   }
 
   .loginBtn:hover {
-    background-color: #e5ab1f;
-    border-color: #e5ab1f;
     transform: translateY(-1px);
   }
 }
@@ -139,7 +137,7 @@ header .header-left {
     padding: 4px 15px;
     border-radius: 12px;
     color: black;
-    background-color: #fdc13c;
+    background-color: #dd2a1b;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -182,11 +180,11 @@ aside a {
 }
 
 aside a:hover {
-  color: #fdc13c;
+  color: #dd2a1b;
 }
 
 aside .active {
-  color: #fdc13c;
+  color: #dd2a1b;
 }
 
 aside nav ul li {
@@ -361,7 +359,7 @@ div.antiAside.active {
 }
 
 .d-flex.justify-content-center.align-items-center button {
-  background-color: #fdc13c;
+  background-color: #dd2a1b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -423,7 +421,7 @@ div.antiAside.active {
 }
 
 .under-nav ul li:last-child a {
-  color: #fdc13c !important;
+  color: #dd2a1b !important;
   opacity: 1 !important;
 }
 
@@ -445,7 +443,7 @@ div.antiAside.active {
 }
 
 .under-nav ul li a.aNav:hover {
-  color: #fdc13c !important;
+  color: #dd2a1b !important;
   opacity: 1 !important;
 }
 
@@ -458,10 +456,10 @@ div.antiAside.active {
   .ulNav {
     overflow-x: scroll;
   }
+}
 
-  .aNav {
-    white-space: nowrap;
-  }
+.aNav {
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
@@ -490,7 +488,6 @@ div.antiAside.active {
 
 .tags span {
   display: inline-block;
-  /* background-color: rgba(167, 139, 250, 0.2); */
   color: black;
   background-color: #ccc;
   padding: 6px 12px;
@@ -500,9 +497,122 @@ div.antiAside.active {
 }
 
 .tags span:hover {
-  background-color: #fdc13c;
+  background-color: #dd2a1b;
 }
 
 .allTrans {
   transition: background-color 0.2s ease-in-out;
+}
+
+.header-right ul li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.header-right ul li:hover {
+  color: #dd2a1b;
+}
+
+.tags span {
+  display: inline-block;
+  color: black;
+  background-color: #ccc;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.tags span:hover {
+  background-color: #dd2a1b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tags-box .col-11 img {
+  transition:
+    opacity 0.3s ease,
+    filter 0.2s ease;
+  border-radius: 16px;
+}
+
+.imgLi img {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  transform: scale(1);
+}
+
+.imgLi img:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imgLi img:active {
+  transform: scale(0.98);
+}
+
+.tags-box .col-11,
+.imgLi span {
+  overflow: hidden;
+  border-radius: 16px;
+  display: block;
+}
+
+.btnMd:hover {
+  color: #44bc7c !important;
+  background-color: #fff !important;
+  border: 1px solid #44bc7c !important;
+}
+
+.btnMdGold:hover {
+  color: #fac913 !important;
+  background-color: #fff !important;
+  border: 1px solid #fac913 !important;
+}
+
+.btnMdSilver:hover {
+  background-color: #fff !important;
+  border: 1px solid black !important;
+}
+
+@media (min-width: 768px) {
+  .imgTarah {
+    aspect-ratio: 1/1;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imgTarah {
+    aspect-ratio: 1/1;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.spanTarh {
+  transition: color 0.1s linear;
+}
+
+.spanTarh:hover {
+  color: #dd2a1b !important;
+}
+
+.containerIMG:hover img {
+  cursor: zoom-in;
 }
