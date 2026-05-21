@@ -173,8 +173,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tags-box d-none d-md-block allTrans mt-3">
+                    <div class="container mb-3 d-none d-md-block">
+                        <div class="tabContainer d-flex column-gap-3">
+                            <div class="tab tabNewest active">جدیدترین ها</div>
+                            <div class="tab tabFree">طرح های رایگان</div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="tags-box tab newest d-block allTrans mt-3">
                         swfuishfiu
+                    </div>
+                    <div class="tags-box tab free d-none allTrans mt-3">
+                        s;lkfjlkjs;lkdfj;alskdjf;alskdjf;alsdkfj
                     </div>
                 </div>
                 <div class="mt-4 d-md-none">
@@ -246,8 +256,18 @@
                             <a href="#"><span>آموزش</span></a>
                         </div>
                     </div>
-                    <div class="tags-box d-md-none allTrans mt-3">
+                    <div class="container mt-4 mb-3 d-md-none">
+                        <div class="tabContainer d-flex column-gap-3">
+                            <div class="tab tabNewest2 active">جدیدترین ها</div>
+                            <div class="tab tabFree2">طرح های رایگان</div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="tags-box tab newest2 d-block allTrans mt-3">
                         swfuishfiu
+                    </div>
+                    <div class="tags-box tab free2 d-none allTrans mt-3">
+                        s;lkfjlkjs;lkdfj;alskdjf;alskdjf;alsdkfj
                     </div>
                 </div>
             </div>
@@ -374,6 +394,51 @@
                 productImage.style.transformOrigin = 'center center';
             }
         });
+    </script>
+
+    <script>
+        document.querySelector(".tabNewest").addEventListener("click", newFunc);
+        document.querySelector(".tabFree").addEventListener("click", freeFunc);
+
+        function newFunc() {
+            document.querySelector(".newest").classList.toggle("d-none");
+            document.querySelector(".newest").classList.toggle("d-block");
+            document.querySelector(".free").classList.toggle("d-none");
+            document.querySelector(".free").classList.toggle("d-block");
+            document.querySelector(".tabNewest").classList.toggle("active")
+            document.querySelector(".tabFree").classList.toggle("active")
+        }
+
+        function freeFunc() {
+            document.querySelector(".newest").classList.toggle("d-none");
+            document.querySelector(".newest").classList.toggle("d-block");
+            document.querySelector(".free").classList.toggle("d-none");
+            document.querySelector(".free").classList.toggle("d-block");
+            document.querySelector(".tabNewest").classList.toggle("active")
+            document.querySelector(".tabFree").classList.toggle("active")
+        }
+
+
+        document.querySelector(".tabNewest2").addEventListener("click", newFunc2);
+        document.querySelector(".tabFree2").addEventListener("click", freeFunc2);
+
+        function newFunc2() {
+            document.querySelector(".newest2").classList.toggle("d-none");
+            document.querySelector(".newest2").classList.toggle("d-block");
+            document.querySelector(".free2").classList.toggle("d-none");
+            document.querySelector(".free2").classList.toggle("d-block");
+            document.querySelector(".tabNewest2").classList.toggle("active")
+            document.querySelector(".tabFree2").classList.toggle("active")
+        }
+
+        function freeFunc2() {
+            document.querySelector(".newest2").classList.toggle("d-none");
+            document.querySelector(".newest2").classList.toggle("d-block");
+            document.querySelector(".free2").classList.toggle("d-none");
+            document.querySelector(".free2").classList.toggle("d-block");
+            document.querySelector(".tabNewest2").classList.toggle("active")
+            document.querySelector(".tabFree2").classList.toggle("active")
+        }
     </script>
 </body>
 

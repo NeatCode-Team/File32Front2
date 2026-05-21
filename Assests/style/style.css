@@ -832,3 +832,21 @@ html {
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media only screen and (max-width: 768px){
+  div.tab.newest{
+    display: none !important;
+  }
+  div.tab.free{
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  div.tab.newest2{
+    display: none !important;
+  }
+  div.tab.free2{
+    display: none !important;
+  }
+}

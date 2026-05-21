@@ -616,3 +616,42 @@ div.antiAside.active {
 .containerIMG:hover img {
   cursor: zoom-in;
 }
+
+.tab{
+  cursor: pointer;
+  position: relative;
+}
+
+.tab.active{
+  color: #dd2a1b;
+}
+
+.tab.active::after{
+  content: "";
+  background-color: #dd2a1b;
+  color: #dd2a1b;
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  top: 164%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 768px){
+  div.tab.newest{
+    display: none !important;
+  }
+  div.tab.free{
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  div.tab.newest2{
+    display: none !important;
+  }
+  div.tab.free2{
+    display: none !important;
+  }
+}
