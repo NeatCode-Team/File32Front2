@@ -1,0 +1,108 @@
+/* 
+    <div class="backdrop"></div>
+    <div class="popover">
+        hello world!
+    </div>
+
+    <div class="imgPopover">
+        <img src="" alt="">
+    </div>
+*/
+
+.popover {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: px; */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(58, 5, 25, 0.1);
+  padding: 40px;
+  opacity: 0;
+  z-index: 100000;
+  max-height: 95svh;
+  overflow: auto;
+  width: clamp(350px, 65%, 950px);
+  transition-property: opacity display overlay top;
+  transition-duration: 0.3s;
+  transition-behavior: allow-discrete;
+}
+
+.popover.active {
+  display: block;
+  opacity: 1;
+  top: 50%;
+}
+@starting-style {
+  .popover.active {
+    opacity: 0;
+    top: 30%;
+  }
+}
+
+.backdrop {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100svw;
+  height: 100svh;
+  background-color: black;
+  transition-property: opacity display overlay;
+  transition-duration: 0.3s;
+  transition-behavior: allow-discrete;
+  z-index: 10000;
+}
+
+.backdrop.active {
+  display: block;
+  opacity: 0.5;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+html:has(#light:checked) {
+  color-scheme: light;
+}
+
+.imgPopover {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px;
+  /* background: rgba(255, 255, 255, 0.95); */
+  /* border-radius: 20px; */
+  box-shadow: 0 20px 40px rgba(58, 5, 25, 0.1);
+  /* padding: 40px; */
+  opacity: 0;
+  z-index: 100000;
+  width: clamp(200px, 80%, 500px);
+  aspect-ratio: 1/1;
+  transition-property: opacity display overlay top;
+  transition-duration: 0.3s;
+  transition-behavior: allow-discrete;
+}
+
+.imgPopover.active {
+  display: block;
+  opacity: 1;
+  top: 50%;
+}
+@starting-style {
+  .imgPopover.active {
+    opacity: 0;
+    top: 30%;
+  }
+}
+
+.imgPopover > img {
+  width: 100%;
+  height: 100%;
+}

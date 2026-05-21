@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:sans-serif;
+}
+
+.comboBox{
+    width:300px;
+    position:relative;
+}
+
+.comboInput{
+    width:100%;
+    height:50px;
+    padding:0 15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#1d1d1d;
+    color:white;
+    font-size:16px;
+}
+
+.comboList{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#1b1b1b;
+    border-radius:12px;
+    overflow:hidden;
+    max-height:250px;
+    overflow-y:auto;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+
+    transition:.2s;
+}
+
+.comboList.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.comboItem{
+    padding:14px 15px;
+    cursor:pointer;
+    color:white;
+    transition:.15s;
+}
+
+.comboItem:hover{
+    background:#2a2a2a;
+}
+
+.noResult{
+    padding:14px 15px;
+    color:#888;
+}
+
+</style>
+</head>
+<body>
+
+<div class="comboBox">
+
+    <input 
+        type="text" 
+        class="comboInput" 
+        placeholder="Search..."
+    >
+
+    <div class="comboList">
+
+        <div class="comboItem">JavaScript</div>
+        <div class="comboItem">TypeScript</div>
+        <div class="comboItem">React</div>
+        <div class="comboItem">Next.js</div>
+        <div class="comboItem">Vue</div>
+        <div class="comboItem">Angular</div>
+        <div class="comboItem">Node.js</div>
+        <div class="comboItem">ASP.NET Core</div>
+
+    </div>
+
+</div>
+
+<script>
+
+const input = document.querySelector(".comboInput");
+const list = document.querySelector(".comboList");
+const items = [...document.querySelectorAll(".comboItem")];
+
+input.addEventListener("focus", () => {
+    list.classList.add("active");
+});
+
+input.addEventListener("input", () => {
+
+    const value = input.value.toLowerCase();
+    let hasResult = false;
+
+    items.forEach(item => {
+
+        const text = item.textContent.toLowerCase();
+
+        if(text.includes(value)){
+            item.style.display = "block";
+            hasResult = true;
+        }
+        else{
+            item.style.display = "none";
+        }
+
+    });
+
+    const oldNoResult = document.querySelector(".noResult");
+
+    if(oldNoResult){
+        oldNoResult.remove();
+    }
+
+    if(!hasResult){
+
+        const noResult = document.createElement("div");
+        noResult.className = "noResult";
+        noResult.textContent = "No result found";
+
+        list.appendChild(noResult);
+    }
+
+});
+
+items.forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        input.value = item.textContent;
+
+        list.classList.remove("active");
+    });
+
+});
+
+document.addEventListener("click", e => {
+
+    if(!e.target.closest(".comboBox")){
+        list.classList.remove("active");
+    }
+
+});
+
+</script>
+
+</body>
+</html>

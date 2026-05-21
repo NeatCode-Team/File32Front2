@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>دکمه بازگشت به بالا | اسکرول نرم</title>
+  <style>
+    /* Reset & base styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f5f7fc 0%, #eef2f8 100%);
+      font-family: system-ui, 'Segoe UI', 'Tahoma', 'Helvetica Neue', sans-serif;
+      direction: rtl; /* پشتیبانی از زبان فارسی / راست‌چین */
+      color: #1e2a3e;
+      line-height: 1.5;
+    }
+
+    /* محتوای دمو – برای ایجاد قابلیت اسکرول */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 6rem 1.5rem;
+    }
+
+    /* هدر ساختگی */
+    .hero {
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #0f2b3d;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #2c7da0;
+      color: white;
+      border-radius: 60px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    /* کارت‌های محتوا برای زیبایی */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.03), 0 6px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #e9edf2;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #1e4a6b;
+      border-right: 5px solid #2c7da0;
+      padding-right: 1rem;
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      color: #2c3e4e;
+      margin-bottom: 1rem;
+    }
+
+    /* دکمه ثابت در پایین سمت راست */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 28px;
+      background: #1e4663;
+      background-image: radial-gradient(circle at 30% 20%, #2c6e9e, #0f2b3d);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      z-index: 1000;
+      opacity: 0.9;
+    }
+
+    /* آیکون فلش بالا (طراحی با CSS خالص + پشتیبانی از SVG fallback) */
+    .scroll-top-btn svg {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+      transition: transform 0.2s ease;
+    }
+
+    .scroll-top-btn:hover {
+      transform: scale(1.07);
+      background: #1e577a;
+      background-image: radial-gradient(circle at 30% 20%, #3782b0, #14384d);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+      opacity: 1;
+    }
+
+    .scroll-top-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* انیمیشن نرم هنگام اسکرول با کلاس‌های جاوااسکریپت */
+    html {
+      scroll-behavior: smooth; /* fallback اگر اسکریپت مشکل داشته باشد */
+    }
+
+    /* برای اطمینان از اینکه دکمه در موبایل هم به خوبی دیده شود */
+    @media (max-width: 600px) {
+      .scroll-top-btn {
+        width: 48px;
+        height: 48px;
+        bottom: 1.2rem;
+        right: 1.2rem;
+      }
+      .scroll-top-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+      .content {
+        padding: 1rem 1rem 5rem 1rem;
+      }
+      .card {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    /* نمایش/مخفی شدن اختیاری برای دکمه (وقتی در بالای صفحه باشیم، شاید دکمه کم‌رنگ شود)
+       اما کاربر پسند است که همیشه دکمه هست. برای تجربه بهتر دکمه همیشه دیده می‌شود. */
+    .scroll-top-btn {
+      transition: opacity 0.3s ease, transform 0.2s ease, background 0.2s;
+    }
+
+    /* یک فوتر کوچک */
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #5c6f87;
+      border-top: 1px solid #dce3ec;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <div class="hero">
+    <h1>✨ دکمه بازگشت به بالا</h1>
+    <div class="badge">اسکرول نرم + انیمیشن smooth</div>
+    <p style="margin-top: 1rem; font-size: 1.1rem;">
+      برای تجربه کلیک روی دکمه پایین سمت راست، صفحه را به پایین اسکرول کنید.  
+      سپس روی فلش کلیک کنید — با انیمیشنی روان به بالای صفحه بازمی‌گردید.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h2>بخش اول : سفر دیجیتال</h2>
+      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است. این متن همیشه برای تست اسکرول نرم و رفتار دکمه بازگشت به بالا استفاده می‌شود. امیدواریم تجربه کاربری لذت‌بخشی داشته باشید.</p>
+      <p>کلیک روی دکمه پایین سمت راست صفحه، شما را به بالاترین نقطه سند می‌برد بدون هیچ زحمتی — انیمیشنی روان و مدرن.</p>
+    </div>
+    <div class="card">
+      <h2>بخش دوم : طراحی واکنش‌گرا</h2>
+      <p>این دکمه همواره در پایین و سمت راست viewport قرار دارد، حتی اگر صفحه کوچک شود یا بزرگ. با استفاده از position: fixed و مختصات bottom/right همواره در دسترس است.</p>
+      <p>انیمیشن scroll با استفاده از <code style="background:#eef2f5; padding:0.2rem 0.4rem; border-radius:8px;">window.scrollTo</code> + <code style="background:#eef2f5; padding:0.2rem 0.4rem; border-radius:8px;">behavior: 'smooth'</code> پیاده‌سازی شده که بهترین عملکرد را در تمام مرورگرهای مدرن دارد.</p>
+    </div>
+    <div class="card">
+      <h2>بخش سوم : تجربه کاربری</h2>
+      <p>اگر از صفحه کلید یا موس استفاده کنید نیز دکمه قابل کلیک است. همچنین برای موبایل‌ها با اندازه مناسب و فضای کافی از لبه صفحه، طراحی شده است. وقتی روی دکمه هاور می‌کنید، بزرگتر می‌شود و سایه‌ی عمیق‌تری پیدا می‌کند تا بازخورد بصری خوبی بدهد.</p>
+      <p>این قابلیت به خصوص در صفحات طولانی وبلاگ ها، مقالات، فروشگاه‌ها یا مستندات بسیار کارآمد است. بدون نیاز به اسکرول دستی طولانی!</p>
+    </div>
+    <div class="card">
+      <h2>چهارمین پاراگراف (فقط برای افزایش ارتفاع)</h2>
+      <p>یکی از مهمترین اصول UX کاهش تلاش کاربر است. دکمه «بازگشت به بالا» استاندارد طلایی وب‌سایت‌های امروزی محسوب می‌شود. با این پیاده‌سازی سبک و کارآمد، به راحتی می‌توانید به هر پروژه‌ای اضافه کنید.</p>
+      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+    </div>
+    <div class="card">
+      <h2>بخش پنجم — پشتیبانی از RTL</h2>
+      <p>از آنجایی که صفحه جهت راست‌چین دارد، دکمه همچنان در راست‌ترین نقطه پایین قرار دارد و با زبان فارسی هماهنگ است. همه‌ی انیمیشن‌ها و کلیک‌ها به زیبایی کار می‌کنند.</p>
+      <p><strong>نکته فنی:</strong> اسکرول نرم توسط مرورگرهای جدید پشتیبانی می‌شود (Chrome, Firefox, Safari, Edge). برای اطمینان، اگر مرورگر خیلی قدیمی باشد، fallback instant انجام میشود. اما تجربه اکثر کاربران smooth خواهد بود.</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    ⬆️ برای رفتن به بالا، روی دکمه پایین سمت راست کلیک کنید — انیمیشن اسکرول نرم.
+  </div>
+</div>
+
+<!-- دکمه ثابت پایین سمت راست با آیکون فلش بالا -->
+<button class="scroll-top-btn" id="goToTopBtn" aria-label="بازگشت به بالای صفحه">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+  (function() {
+    // دریافت ارجاع به دکمه
+    const topButton = document.getElementById('goToTopBtn');
+    
+    // تابع پیمایش به بالای صفحه با انیمیشن smooth
+    function scrollToTopSmooth() {
+      // ویندو یا سند — استفاده از window.scrollTo با گزینه‌های مدرن
+      // توجه: برای اطمینان از اینکه اسکرول به صورت نرم انجام شود، از behavior:'smooth' استفاده می‌کنیم
+      // و برای سازگاری بیشتر با مرورگرهای قدیمی، یک fallback ساده در نظر گرفته شده اما نیاز نیست.
+      if ('scrollBehavior' in document.documentElement.style) {
+        // مرورگر از smooth پشتیبانی می‌کند (اکثر مرورگرهای جدید)
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        // Fallback قدیمی: با استفاده از تابع تدریجی (این حالت خیلی نادر اما برای اطمینان)
+        // این روش ابتدایی باعث انیمیشن دستی می‌شود با requestAnimationFrame.
+        const startPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        if (startPosition === 0) return;
+        const duration = 500; // مدت زمان انیمیشن (ms)
+        const startTime = performance.now();
+        
+        function animationStep(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          // easeOutCubic برای حرکت نرم
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const newPosition = startPosition * (1 - easeOut);
+          window.scrollTo(0, newPosition);
+          if (progress < 1) {
+            requestAnimationFrame(animationStep);
+          } else {
+            // اطمینان از دقیقاً صفر شدن در انتها
+            window.scrollTo(0, 0);
+          }
+        }
+        requestAnimationFrame(animationStep);
+      }
+    }
+    
+    // رویداد کلیک: اسکرول به بالا + بازخورد اضافی (اختیاری: لرزش یا تغییر دکمه)
+    if (topButton) {
+      topButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        // اجرای انیمیشن اسکرول به بالای صفحه
+        scrollToTopSmooth();
+        
+        // (اختیاری) افزودن یک بازخورد کوچک برای کاربر: تغییر موقت آیکون یا سایه
+        // این کار فقط حس خوشایندی ایجاد می‌کند و به انیمیشن اصلی لطمه نمی‌زند.
+        const originalSvg = topButton.innerHTML;
+        // می‌توانیم افکت سریع "ضربه" بدهیم اما لازم نیست.
+        // شاید استایل فوری: تغییر رنگ یا شفافیت خیلی سریع
+        topButton.style.transform = 'scale(0.92)';
+        setTimeout(() => {
+          if (topButton) topButton.style.transform = '';
+        }, 150);
+        
+        // اضافه کردن حالت focus برای دسترسی‌پذیری (اختیاری)
+        topButton.setAttribute('aria-label', 'بازگشت به بالا (انجام شد)');
+        setTimeout(() => {
+          if (topButton) topButton.setAttribute('aria-label', 'بازگشت به بالای صفحه');
+        }, 1000);
+      });
+    }
+    
+    // بهبود تجربه: اگر کاربر در بالای صفحه باشد، شاید دکمه را کمی کمرنگ کنیم؟ تصمیم گرفتیم همیشه پررنگ باشد.
+    // اما می‌توانیم یک افکت کوچک اضافه کنیم که وقتی صفحه در بالاترین نقطه است، باز هم دکمه کار می‌کند ولی کاربر را اذیت نمی‌کند.
+    // برای نمایش انیمیشن بهتر از scroll event استفاده نمی‌کنیم چون هدف صرفاً دکمه بازگشت است.
+    
+    // (اختیاری) در صورتی که صفحه بارگذاری شد و از قبل اسکرول وجود داشت دکمه بدون مشکل کار می‌کند.
+    console.log('دکمه بازگشت به بالا آماده است. پایین سمت راست ✅');
+    
+    // برای مرورگرهایی که از behavior smooth پشتیبانی نمی‌کنند، fallback بالا کار خواهد کرد.
+    // همچنین با استفاده از تست scrollBehavior همزمان همه چیز عالیست.
+  })();
+</script>
+
+<!-- 
+  توضیحات نهایی:
+  - دکمه با fixed در پایین سمت راست قرار گرفته و همیشه در دسترس است.
+  - با کلیک، انیمیشن اسکرول نرم (smooth scroll) به بالای صفحه اجرا می‌شود.
+  - در صورت عدم پشتیبانی مرورگر از behavior:'smooth'، انیمیشن دستی (requestAnimationFrame) جایگزین می‌شود.
+  - طراحی واکنش‌گرا و زیبا، همراه با حالت هاور و اکتیو.
+  - از نظر دسترسی، aria-label و قابلیت کلیک با کیبرد (tab + enter) برقرار است.
+  - کد مستقل بوده، نیازی به کتابخانه خارجی ندارد.
+  - متن دمو به فارسی و انگلیسی برای افزایش ارتفاع صفحه جهت تست اسکرول.
+-->
+</body>
+</html>

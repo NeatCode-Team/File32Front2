@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+
+        <button class="nav prev">‹</button>
+
+        <div class="carousel-track">
+
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <h3>Item 1</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="nav next">›</button>
+
+    </div>
+    <script>
+        const track = document.querySelector(".carousel-track");
+
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+
+        function getCards() {
+            return Array.from(document.querySelectorAll(".card"));
+        }
+
+        function getVisibleCards() {
+            return window.innerWidth <= 768 ? 2 : 3;
+        }
+
+        function updateClasses() {
+
+            const cards = getCards();
+
+            cards.forEach(card => {
+                card.classList.remove("active", "side");
+            });
+
+            const visible = getVisibleCards();
+
+            if (visible === 3) {
+
+                cards[1].classList.add("active");
+
+                if (cards[0]) {
+                    cards[0].classList.add("side");
+                }
+
+                if (cards[2]) {
+                    cards[2].classList.add("side");
+                }
+
+            } else {
+
+                cards[0].classList.add("active");
+
+            }
+
+        }
+
+        function moveNext() {
+
+            const cards = getCards();
+
+            // قبل از حرکت، کارت اول رو آخر میذاریم توی ذهنمون
+            const firstCard = cards[0];
+
+            // کلاس‌ها رو برای وضعیت بعدی تنظیم میکنیم
+            track.appendChild(firstCard);
+
+            updateClasses();
+
+            // برمیگردونیمش سر جاش که انیمیشن طبیعی دیده بشه
+            track.prepend(firstCard);
+
+            const cardWidth = cards[0].offsetWidth;
+
+            track.style.transition = "transform .6s ease";
+            track.style.transform = `translateX(-${cardWidth}px)`;
+
+            track.addEventListener("transitionend", function handler() {
+
+                track.removeEventListener("transitionend", handler);
+
+                track.appendChild(firstCard);
+
+                track.style.transition = "none";
+                track.style.transform = "translateX(0)";
+
+            }, { once: true });
+
+        }
+
+        function movePrev() {
+
+            const cards = getCards();
+
+            const lastCard = cards[cards.length - 1];
+
+            track.prepend(lastCard);
+
+            const cardWidth = lastCard.offsetWidth;
+
+            track.style.transition = "none";
+            track.style.transform = `translateX(-${cardWidth}px)`;
+
+            requestAnimationFrame(() => {
+
+                requestAnimationFrame(() => {
+
+                    track.style.transition = "transform .6s ease";
+                    track.style.transform = "translateX(0)";
+
+                });
+
+            });
+
+            updateClasses();
+
+        }
+
+        nextBtn.addEventListener("click", () => {
+            moveNext();
+
+            startAutoPlay();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            movePrev();
+
+            startAutoPlay();
+        });
+
+        window.addEventListener("resize", updateClasses);
+
+        let autoPlay;
+
+        function startAutoPlay() {
+
+            clearInterval(autoPlay);
+
+            autoPlay = setInterval(() => {
+
+                moveNext();
+
+            }, 5000);
+
+        }
+
+        updateClasses();
+
+        startAutoPlay();
+    </script>
+</body>
+
+</html>

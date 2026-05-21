@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش متن با دکمه ادامه/بستن - نسخه عملی</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .card {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text-container {
+            padding: 2rem;
+        }
+
+        /* کلید اصلی: wrapper با انیمیشن max-height */
+        .text-wrapper {
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .long-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-align: justify;
+        }
+
+        .button-container {
+            padding: 0 2rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        📖 مقاله آموزشی
+    </div>
+    
+    <div class="text-container">
+        <!-- wrapper ای که ارتفاعش کنترل می‌شود -->
+        <div id="textWrapper" class="text-wrapper">
+            <div class="long-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut necessitatibus voluptatem aspernatur officia incidunt voluptatibus pariatur similique nisi, eligendi eius, voluptatum blanditiis iste maiores atque omnis qui eos porro amet!
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button id="toggleButton" class="toggle-btn">📖 ادامه مطلب</button>
+    </div>
+</div>
+
+<script>
+    // دریافت المنت‌ها
+    const wrapper = document.getElementById('textWrapper');
+    const toggleBtn = document.getElementById('toggleButton');
+    
+    // وضعیت باز یا بسته بودن (false = بسته، true = باز)
+    let isOpen = false;
+    
+    // متغیر برای ذخیره ارتفاع کامل متن (حالت باز)
+    let fullHeight = null;
+    
+    // تابع برای گرفتن ارتفاع کامل محتوا (زمانی که همه چیز قابل مشاهده است)
+    function getFullHeight() {
+        //transition رو موقت غیرفعال می‌کنیم
+        const originalTransition = wrapper.style.transition;
+        wrapper.style.transition = 'none';
+        
+        // max-height رو به none می‌بریم تا همه محتوا دیده بشه
+        const originalMaxHeight = wrapper.style.maxHeight;
+        wrapper.style.maxHeight = 'none';
+        
+        // ارتفاع واقعی رو می‌گیریم
+        const height = wrapper.scrollHeight;
+        
+        //恢复到之前的状態
+        wrapper.style.maxHeight = originalMaxHeight;
+        wrapper.style.transition = originalTransition;
+        
+        return height;
+    }
+    
+    // تابع مقداردهی اولیه
+    function initialize() {
+        // اول wrapper رو به حالت بسته درمیاریم با یه مقدار پیشفرض
+        wrapper.style.maxHeight = '120px'; // نمایش حدود 3 خط اول
+        isOpen = false;
+        
+        // ارتفاع کامل رو محاسبه و ذخیره می‌کنیم
+        fullHeight = getFullHeight();
+        
+        // متن دکمه رو تنظیم می‌کنیم
+        toggleBtn.innerHTML = '📖 ادامه مطلب';
+    }
+    
+    // تابع باز کردن متن
+    function openText() {
+        if (fullHeight === null) {
+            fullHeight = getFullHeight();
+        }
+        
+        // تنظیم max-height به ارتفاع کامل برای باز شدن با انیمیشن
+        wrapper.style.maxHeight = fullHeight + 'px';
+        isOpen = true;
+        toggleBtn.innerHTML = '✨ بستن متن';
+    }
+    
+    // تابع بستن متن
+    function closeText() {
+        wrapper.style.maxHeight = '120px';
+        isOpen = false;
+        toggleBtn.innerHTML = '📖 ادامه مطلب';
+    }
+    
+    // تابع toggle
+    function toggleText() {
+        if (isOpen) {
+            closeText();
+        } else {
+            openText();
+        }
+    }
+    
+    // در هنگام resize صفحه، باید ارتفاع کامل رو دوباره محاسبه کنیم
+    let resizeTimeout;
+    function handleResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // ذخیره وضعیت فعلی
+            const wasOpen = isOpen;
+            
+            // محاسبه مجدد ارتفاع کامل
+            fullHeight = getFullHeight();
+            
+            // اگر در حالت باز بودیم، ارتفاع رو به‌روز کنیم
+            if (wasOpen) {
+                wrapper.style.maxHeight = fullHeight + 'px';
+            } else {
+                // اطمینان از اینکه حالت بسته برقراره
+                wrapper.style.maxHeight = '120px';
+            }
+        }, 250);
+    }
+    
+    // مقداردهی اولیه بعد از لود کامل صفحه
+    window.addEventListener('load', function() {
+        initialize();
+        
+        // برای اطمینان بیشتر، بعد از 100 میلی‌ثانیه دوباره محاسبه کن (برای فونت‌ها و ...)
+        setTimeout(function() {
+            fullHeight = getFullHeight();
+            if (isOpen) {
+                wrapper.style.maxHeight = fullHeight + 'px';
+            }
+        }, 100);
+    });
+    
+    // اتصال رویداد کلیک به دکمه
+    toggleBtn.addEventListener('click', toggleText);
+    
+    // اتصال رویداد resize برای پاسخگویی به تغییر اندازه صفحه
+    window.addEventListener('resize', handleResize);
+</script>
+
+</body>
+</html>

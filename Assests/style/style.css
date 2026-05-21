@@ -107,19 +107,18 @@ header .header-left {
   }
 
   .user-link:hover {
-    border-color: #fdc13c;
+    border-color: #dd2a1b;
     transform: translateY(-1px);
   }
 
   .loginBtn {
-    color: black;
-    background-color: #fdc13c;
-    border: 1px solid #fdc13c;
+    color: white;
+    background-color: #dd2a1b;
+    border: 1px solid #dd2a1b;
     flex-direction: row-reverse;
   }
 
   .loginBtn:hover {
-    background-color: #e5ab1f;
     border-color: #e5ab1f;
     transform: translateY(-1px);
   }
@@ -138,8 +137,8 @@ header .header-left {
     text-decoration: none;
     padding: 4px 15px;
     border-radius: 12px;
-    color: black;
-    background-color: #fdc13c;
+    color: white;
+    background-color: #dd2a1b;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -182,11 +181,11 @@ aside a {
 }
 
 aside a:hover {
-  color: #fdc13c;
+  color: #dd2a1b;
 }
 
 aside .active {
-  color: #fdc13c;
+  color: #dd2a1b;
 }
 
 aside nav ul li {
@@ -361,7 +360,7 @@ div.antiAside.active {
 }
 
 .d-flex.justify-content-center.align-items-center button {
-  background-color: #fdc13c;
+  background-color: #dd2a1b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -422,14 +421,414 @@ div.antiAside.active {
   }
 }
 
-
-
-
-
-
-
 /* Nima Code */
-.statImg img{
+.statImg img {
   width: 50px;
 }
 
+.stats {
+  background-color: #ececec;
+  margin-top: 70px;
+}
+
+/* slider */
+.carouselImg {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ececec;
+  border-radius: 999px;
+  padding: 10px;
+
+  overflow: hidden;
+}
+
+.carouselImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customCard {
+  max-width: 33%;
+}
+
+.carouselTop {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.carouselText{
+  text-align: justify;
+}
+
+.carouselBottom {
+  background-color: #ececec;
+  padding: 40px 30px;
+  border-radius: 24px;
+}
+
+.swiperTop {
+  position: relative;
+  top: 30px;
+  left: 20px;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row-reverse;
+  column-gap: 12px;
+
+  z-index: 2;
+}
+
+.text-container {
+  padding: 2rem;
+}
+
+/* کلید اصلی: wrapper با انیمیشن max-height */
+.text-wrapper {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.long-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #2d3748;
+  text-align: justify;
+}
+
+.button-container {
+  padding: 0 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-btn:active {
+  transform: translateY(0);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: #dd2a1b;
+  /* background-image: radial-gradient(circle at 30% 20%, #2c6e9e, #0f2b3d); */
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+/* آیکون فلش بالا (طراحی با CSS خالص + پشتیبانی از SVG fallback) */
+.scroll-top-btn svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s ease;
+}
+
+.scroll-top-btn:hover {
+  /* transform: scale(1.07); */
+  background: #a72014;
+  /* background-image: radial-gradient(circle at 30% 20%, #3782b0, #14384d); */
+  /* box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); */
+  opacity: 1;
+}
+
+.scroll-top-btn:active {
+  transform: scale(0.96);
+}
+
+/* انیمیشن نرم هنگام اسکرول با کلاس‌های جاوااسکریپت */
+html {
+  scroll-behavior: smooth; /* fallback اگر اسکریپت مشکل داشته باشد */
+}
+
+@media (max-width: 600px) {
+  .scroll-top-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 1.2rem;
+    right: 1.2rem;
+  }
+  .scroll-top-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .content {
+    padding: 1rem 1rem 5rem 1rem;
+  }
+  .card {
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* نمایش/مخفی شدن اختیاری برای دکمه (وقتی در بالای صفحه باشیم، شاید دکمه کم‌رنگ شود)
+       اما کاربر پسند است که همیشه دکمه هست. برای تجربه بهتر دکمه همیشه دیده می‌شود. */
+.scroll-top-btn {
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease,
+    background 0.2s;
+}
+
+.goToTopNone{
+  opacity: 0;
+}
+
+.goToTopBlock{
+  opacity: 1;
+}
+
+.fastAccess {
+  width: max-content;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  position: relative;
+  top: -70px;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    top: -30px;
+    padding: 8px 12px;
+  }
+}
+
+.fastAccess img {
+  width: 40px;
+}
+
+.accessItem {
+  position: relative;
+  padding: 5px 10px;
+}
+
+.accessItem a {
+  row-gap: 3px;
+}
+
+.accessItem a p {
+  margin-bottom: 0px;
+}
+
+.accessItem a:hover p {
+  color: #f15a31;
+}
+
+.accessItem button {
+  border: 0px;
+  background-color: #44bc7c;
+  color: white;
+  padding: 8px;
+  border-radius: 1000000px;
+  aspect-ratio: 1/1;
+}
+
+.accessItem button p {
+  margin-bottom: 0px;
+}
+
+.accessItem:not(:last-child) {
+  border-left: 1px solid #e9e9e9;
+}
+
+.popover > div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* padding-inline: 24px; */
+
+  @media (max-width: 992px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .popover{
+    padding: 16px !important;
+  }
+
+  /* .item{
+    max-width: 300px;
+  } */
+}
+
+.fastPopItem {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #ece9f3;
+  border-radius: 10px;
+  margin: 12px;
+  padding: 20px 4px;
+}
+
+.fastPopItem a {
+  row-gap: 4px;
+}
+
+.fastPopItem a:hover p {
+  color: #f15a31;
+}
+
+.fastPopItem img {
+  width: 40px;
+}
+
+.fastPopItem p {
+  margin: 0px;
+}
+
+.grid {
+  column-width: 280px;
+  column-gap: 16px;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: #1e1e1e;
+  color: white;
+
+  transition: 0.25s transform;
+  cursor: pointer;
+  position: relative;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item:hover .content {
+  opacity: 1;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+}
+
+.content {
+  padding: 14px;
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+  color: white;
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.836)
+  );
+  width: 100%;
+  transition: opacity 0.2s linear;
+}
+
+.content:hover p {
+  color: #dd2a1b;
+}
+
+.content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.content p {
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-bottom: 0px;
+  font-size: 12px;
+  transition: color 0.1s linear;
+  text-align: center;
+}
+
+.gridSystem>div.container>div.row>a{
+  background-color: #dd2a1b;
+  border-radius: 100000px;
+  width: max-content !important;
+  transition: background-color .1s linear;
+}
+
+.gridSystem>div.container>div.row>a:hover{
+  background-color: #a72014;
+}
+
+.carouselSection>div.container>div.row>a{
+  background-color: #dd2a1b;
+  border-radius: 100000px;
+  width: max-content !important;
+  transition: background-color .1s linear;
+}
+
+.carouselSection>div.container>div.row>a:hover{
+  background-color: #a72014;
+}
+
+.textAfter{
+  position: relative;
+}
+
+.textAfter::after{
+  content: "";
+  background-color: #dd2a1b;
+  color: #dd2a1b;
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  top: 164%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tab{
+  cursor: pointer;
+  position: relative;
+}
+
+.tab.active{
+  color: #dd2a1b;
+}
+
+.tab.active::after{
+  content: "";
+  background-color: #dd2a1b;
+  color: #dd2a1b;
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  top: 164%;
+  left: 50%;
+  transform: translateX(-50%);
+}
